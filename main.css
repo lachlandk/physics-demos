@@ -10,16 +10,24 @@ html, body {
 	/*height: 100%;*/
 }
 
-body {
+#page-container {
 	display: flex;
 	flex-flow: column nowrap;
 	align-items: center;
 }
 
+#content-divider {
+	position: absolute;
+	top: 20vh;
+	left: 29%;
+	width: 60%;
+	border: black 1px solid;
+}
+
 header {
 	width: 90%;
 	background: limegreen;
-	padding: 50px 0;
+	height: 20vh;
 	display: flex;
 	flex-flow: column nowrap;
 	justify-content: center;
@@ -39,7 +47,7 @@ nav {
 	background: lightsalmon;
 }
 
-#line {
+#category-divider {
 	position: sticky;
 	left: 20%;
 	top: 10vh;

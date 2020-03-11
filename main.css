@@ -60,4 +60,21 @@ section {
 article {
 	width: 50%;
 	height: 50vh;
+	/*padding: 5% 0 5% 2%;*/
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;
+	align-items: center;
+}
+
+.thumbnail-container {
+	border: 1px black solid;
+	width: 90%;
+	height: 90%;
+	padding: 5%;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
 }

@@ -14,8 +14,9 @@ body {
 
 #content-divider {
 	width: 90%;
-	height: 1px;
+	height: 2px;
 	background: #AAA;
+	border-radius: 25%;
 }
 
 header {
@@ -44,9 +45,10 @@ nav {
 	left: 20%;
 	top: 5vh;
 	height: 90vh;
-	width: 1px;
+	width: 2px;
 	background: #AAA;
 	margin-top: 5vh;
+	border-radius: 25%;
 }
 
 section {
@@ -59,7 +61,7 @@ section {
 
 article {
 	width: 50%;
-	height: 50vh;
+	height: 55vh;
 	/*padding: 5% 0 5% 2%;*/
 	display: flex;
 	flex-flow: row nowrap;
@@ -68,7 +70,8 @@ article {
 }
 
 .thumbnail-container {
-	border: 1px black solid;
+	border: 2px #CCC solid;
+	border-radius: 5px;
 	width: 90%;
 	height: 90%;
 	padding: 5%;
@@ -77,4 +80,13 @@ article {
 img {
 	max-width: 100%;
 	height: auto;
+	border: 2px #CCC solid;
+	border-radius: 5px;
+}
+
+footer {
+	margin-top: 5vh;
+	height: 20vh;
+	width: 100%;
+	background: #CCC
 }

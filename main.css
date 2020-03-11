@@ -6,27 +6,20 @@
 	margin: 0; /*to get rid of browsers applying margins by default (very silly)*/
 }
 
-html, body {
-	/*height: 100%;*/
-}
-
-#page-container {
+body {
 	display: flex;
 	flex-flow: column nowrap;
 	align-items: center;
 }
 
 #content-divider {
-	position: absolute;
-	top: 20vh;
-	left: 29%;
-	width: 60%;
-	border: black 1px solid;
+	width: 90%;
+	height: 1px;
+	background: #AAA;
 }
 
 header {
 	width: 90%;
-	background: limegreen;
 	height: 20vh;
 	display: flex;
 	flex-flow: column nowrap;
@@ -44,19 +37,20 @@ main {
 nav {
 	width: 20%;
 	height: 2000px;
-	background: lightsalmon;
+	margin-top: 5vh;
 }
 
 #category-divider {
 	position: sticky;
 	left: 20%;
-	top: 10vh;
-	height: 80vh;
-	border: black 1px solid;
+	top: 5vh;
+	height: 90vh;
+	width: 1px;
+	background: #AAA;
+	margin-top: 5vh;
 }
 
 section {
 	width: 80%;
 	height: 2000px;
-	background: lightseagreen;
 }

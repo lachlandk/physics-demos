@@ -8,5 +8,15 @@
 		"title": "Ray Optics",
 		"description": "Simulation of ray optics with various optical surfaces.",
 		"url": "https://lachlandk.github.io/ray-optics-demo"
+	},
+	"infinite-potential-well": {
+		"title": "COMING SOON: Infinite/Finite Potential Well",
+		"description": "Simulation of a quantum particle in a potential well.",
+		"url": ""
+	},
+	"orbital-parameters": {
+		"title": "COMING SOON: Orbital Parameters",
+		"description": "Visualisation of Orbital Elements in a two-body Keplerian orbit.",
+		"url": ""
 	}
 }

@@ -1,0 +1,12 @@
+{
+	"phasors": {
+		"title": "Phasors",
+		"description": "Visualise linear superposition of waves using phasor diagrams.",
+		"url": "https://lachlandk.github.io/phasors-demo"
+	},
+	"ray-optics": {
+		"title": "Ray Optics",
+		"description": "Simulation of ray optics with various optical surfaces.",
+		"url": "https://lachlandk.github.io/ray-optics-demo"
+	}
+}

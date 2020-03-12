@@ -49,6 +49,17 @@ main {
 nav {
 	width: 20%;
 	margin-top: 5vh;
+	display: flex;
+	flex-flow: column nowrap;
+}
+
+nav h2 {
+	font-size: 28px;
+	text-decoration: black underline;
+}
+
+nav a {
+	font-size: 20px;
 }
 
 #category-divider {

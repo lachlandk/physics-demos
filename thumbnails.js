@@ -32,4 +32,8 @@
 			itemSelector: ".thumbnail"
 		})
 	});
+
+	$(".category").on("click", function(event){
+		location.hash = "category=" + event.target.id;
+	})
 })();

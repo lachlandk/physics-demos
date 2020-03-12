@@ -38,7 +38,7 @@
 		categoryUpdate();
 
 		$(".category").on("click", function(event){
-			location.hash = "category=" + event.target.id;
+			history.replaceState(null, null, event.target.id !== "all" ? "#category=" + event.target.id : location.href.split("#")[0]);
 			categoryUpdate();
 		});
 	});

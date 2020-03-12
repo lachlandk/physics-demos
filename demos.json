@@ -3,12 +3,14 @@
 		"title": "Phasors",
 		"description": "Visualise linear superposition of waves using phasor diagrams.",
 		"url": "https://lachlandk.github.io/phasors-demo",
+		"thumbnail": "https://raw.githubusercontent.com/lachlandk/phasors-demo/master/thumbnail.png",
 		"tags": ["waves"]
 	},
 	"ray-optics": {
 		"title": "Ray Optics",
 		"description": "Simulation of ray optics with various optical surfaces.",
 		"url": "https://lachlandk.github.io/ray-optics-demo",
+		"thumbnail": "https://raw.githubusercontent.com/lachlandk/ray-optics-demo/master/thumbnail.png",
 		"tags": ["optics"]
 	},
 	"infinite-potential-well": {
@@ -22,5 +24,11 @@
 		"description": "Visualisation of Orbital Elements in a two-body Keplerian orbit.",
 		"url": "",
 		"tags": ["astrophysics"]
+	},
+	"integrals": {
+		"title": "COMING SOON: Integral Problem Generator",
+		"description": "Generate a practice integral (varying difficulties) to solve.",
+		"url": "",
+		"tags": ["Mathematics"]
 	}
 }

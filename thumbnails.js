@@ -14,13 +14,13 @@
 			description.innerText = demo["description"];
 
 			let anchor = document.createElement("a");
-			anchor.setAttribute("href", "https://lachlandk.github.io/physics-demos/view?demo=" + key);
+			anchor.setAttribute("href", "https://lachlandk.github.io/physics-demos/view#demo=" + key);
 			anchor.appendChild(image);
 			anchor.appendChild(title);
 			anchor.appendChild(description);
 
 			let article = document.createElement("article");
-			article.setAttribute("class", "thumbnail");
+			article.setAttribute("class", "thumbnail " + demo["tags"].join(" "));
 			let container = document.createElement("div");
 			container.setAttribute("class", "thumbnail-container");
 			container.appendChild(anchor);
@@ -28,12 +28,18 @@
 			document.getElementById("demos").appendChild(article);
 		});
 
-		$("#demos").isotope({
-			itemSelector: ".thumbnail"
-		})
-	});
+		function categoryUpdate(){
+			let hashString = location.hash.match(/category=([^&]+)/i);
+			$("#demos").isotope({
+				itemSelector: ".thumbnail",
+				filter: hashString && hashString[1] && hashString[1] !== "all" ? "." + hashString[1] : "*"
+			});
+		}
+		categoryUpdate();
 
-	$(".category").on("click", function(event){
-		location.hash = "category=" + event.target.id;
-	})
+		$(".category").on("click", function(event){
+			location.hash = "category=" + event.target.id;
+			categoryUpdate();
+		});
+	});
 })();

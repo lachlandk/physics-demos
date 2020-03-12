@@ -26,6 +26,10 @@
 			container.appendChild(anchor);
 			article.appendChild(container);
 			document.getElementById("demos").appendChild(article);
+		});
+
+		$("#demos").isotope({
+			itemSelector: ".thumbnail"
 		})
 	});
 })();

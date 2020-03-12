@@ -3,7 +3,8 @@
 	-webkit-box-sizing:	border-box;
 	-moz-box-sizing:	border-box;
 
-	margin: 0; /*to get rid of browsers applying margins by default (very silly)*/
+	margin: 0; /* to get rid of browsers applying margins by default (very silly) */
+	font-family: "Baloo 2", cursive;
 }
 
 body {
@@ -26,6 +27,16 @@ header {
 	flex-flow: column nowrap;
 	justify-content: center;
 	align-items: center;
+}
+
+header h1 {
+	font-size: 72px;
+	font-family: "Nanum Pen Script", cursive;
+}
+
+header h2 {
+	font-size: 24px;
+	color: #333;
 }
 
 main {
@@ -53,17 +64,12 @@ nav {
 
 section {
 	width: 80%;
-	display: flex;
-	flex-flow: row wrap;
-	justify-content: flex-start;
-	align-content: flex-start;
 }
 
 article {
 	width: 50%;
-	height: 55vh;
-	/*padding: 5% 0 5% 2%;*/
-	display: flex;
+	height: 60vh;
+	display: inline-flex;
 	flex-flow: row nowrap;
 	justify-content: center;
 	align-items: center;
@@ -75,6 +81,15 @@ article {
 	width: 90%;
 	height: 90%;
 	padding: 5%;
+	overflow: hidden;
+}
+
+.thumbnail h3 {
+	font-size: 20px;
+}
+
+.thumbnail p {
+	font-size: 16px;
 }
 
 img {

@@ -62,6 +62,20 @@ nav a {
 	font-size: 20px;
 }
 
+nav a:link {
+	color: black;
+	text-decoration: none;
+}
+
+nav a:hover {
+	margin-left: 10px;
+}
+
+nav a:active {
+	position: relative;
+	top: 2px;
+}
+
 #category-divider {
 	position: sticky;
 	left: 20%;

@@ -41,5 +41,7 @@
 			history.replaceState(null, null, event.target.id !== "all" ? "#category=" + event.target.id : location.href.split("#")[0]);
 			categoryUpdate();
 		});
+
+		// TODO: click animation for demos
 	});
 })();

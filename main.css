@@ -93,7 +93,7 @@ section {
 
 article {
 	width: 50%;
-	height: 60vh;
+	height: 400px;
 	display: inline-flex;
 	flex-flow: row nowrap;
 	justify-content: center;
@@ -109,12 +109,18 @@ article {
 	overflow: hidden;
 }
 
+.thumbnail-container a:link, a:visited {
+	text-decoration: none;
+	color: black;
+}
+
 .thumbnail h3 {
 	font-size: 20px;
+	text-decoration: underline;
 }
 
 .thumbnail p {
-	font-size: 16px;
+	font-size: 18px;
 }
 
 img {

@@ -13,22 +13,22 @@
 		"thumbnail": "https://raw.githubusercontent.com/lachlandk/ray-optics-demo/master/thumbnail.png",
 		"tags": ["optics"]
 	},
+	"integrals": {
+		"title": "Integral Problem Generator",
+		"description": "Generate a practice integral (varying difficulties) to solve.",
+		"url": "",
+		"tags": ["mathematics"]
+	},
 	"infinite-potential-well": {
-		"title": "COMING SOON: Infinite/Finite Potential Well",
+		"title": "Infinite/Finite Potential Well",
 		"description": "Simulation of a quantum particle in a potential well.",
 		"url": "",
 		"tags": ["quantum-mechanics"]
 	},
 	"orbital-parameters": {
-		"title": "COMING SOON: Orbital Parameters",
+		"title": "Orbital Parameters",
 		"description": "Visualisation of Orbital Elements in a two-body Keplerian orbit.",
 		"url": "",
 		"tags": ["astrophysics"]
-	},
-	"integrals": {
-		"title": "COMING SOON: Integral Problem Generator",
-		"description": "Generate a practice integral (varying difficulties) to solve.",
-		"url": "",
-		"tags": ["mathematics"]
 	}
 }

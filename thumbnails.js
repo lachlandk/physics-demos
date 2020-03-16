@@ -14,7 +14,7 @@
 			description.innerText = demo["description"];
 
 			let anchor = document.createElement("a");
-			anchor.setAttribute("href", "https://lachlandk.github.io/physics-demos/view#demo=" + key);
+			anchor.setAttribute("href", demo.url ? "https://physics-demos.js.org/view#demo=" + key : "javascript:void(0)");
 			anchor.appendChild(image);
 			anchor.appendChild(title);
 			anchor.appendChild(description);
@@ -28,17 +28,27 @@
 			document.getElementById("demos").appendChild(article);
 		});
 
+		const category = $(".category");
+
 		function categoryUpdate(){
 			let hashString = location.hash.match(/category=([^&]+)/i);
+			let categoryName = hashString && hashString[1] ? hashString[1] : "all";
+			console.log(categoryName);
+			category.css({"text-decoration": "none", "font-weight": "normal"});
+			$("#" + categoryName).css({"text-decoration": "black underline", "font-weight": "bold"});
 			$("#demos").isotope({
 				itemSelector: ".thumbnail",
-				filter: hashString && hashString[1] && hashString[1] !== "all" ? "." + hashString[1] : "*"
+				filter: categoryName !== "all" ? "." + categoryName : "*"
 			});
 		}
 		categoryUpdate();
 
-		$(".category").on("click", function(event){
+		category.on("click", function(event){
 			history.replaceState(null, null, event.target.id !== "all" ? "#category=" + event.target.id : location.href.split("#")[0]);
+			categoryUpdate();
+		});
+		$(window).on("hashchange", function(){
+			history.replaceState(null, null, location.href.split("#")[0]);
 			categoryUpdate();
 		});
 

@@ -3,22 +3,58 @@
 <head>
 	<meta charset="UTF-8">
 	<!-- TODO: favicon -->
-	<title>Demo</title>
+	<title>Error - Demo Not Found</title>
+	<link href="https://fonts.googleapis.com/css?family=Nanum+Pen+Script|Baloo+2&display=swap" rel="stylesheet">
 	<style>
 		* {
 			box-sizing:			border-box;
 			-webkit-box-sizing:	border-box;
 			-moz-box-sizing:	border-box;
 
-			margin: 0; /*to get rid of browsers applying margins by default (very silly)*/
+			margin: 0; /* to get rid of browsers applying margins by default (very silly) */
 		}
 
 		html, body {
 			height: 100%;
+			width: 100%;
+		}
+
+		body {
+			display: flex;
+			flex-flow: column nowrap;
+			justify-content: center;
+			align-items: center;
+		}
+
+		h1 {
+			font-size: 72px;
+			font-family: sans-serif;
+		}
+
+		h2 {
+			font-size: 72px;
+			font-family: "Nanum Pen Script", cursive;
+		}
+
+		p {
+			font-size: 18px;
+			font-family: sans-serif;
+		}
+
+		a:link, a:visited, a:active {
+			font-weight: bold;
+			color: black;
+			text-decoration: none;
+		}
+
+		a:hover {
+			text-decoration: underline black;
 		}
 	</style>
 </head>
 <body>
-	<h1>Hello</h1>
+	<h1>404</h1>
+	<h2>Demo Not Found</h2>
+	<p>Sorry, the demo you were looking for was not found. <a href="https://physics-demo.js.org">Go back to home page?</a></p>
 </body>
 </html>

@@ -31,12 +31,25 @@
 <body>
 	<iframe id="demo"></iframe>
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-	<script src="demo-view.js">
+	<script>
 		(function(){
+
 			$.getJSON("https://raw.githubusercontent.com/lachlandk/physics-demos/master/demos.json", function(demos){
-				const iframe = document.getElementById("demo");
-				const demo = demos[location.hash.match(/demo=([^&]+)/i)[1]];
-				iframe.setAttribute("src", demo["url"]);
+				function loadDemo(){
+					const iframe = document.getElementById("demo");
+					const demo = demos[location.hash.match(/demo=([^&]+)/i)[1]];
+					if (demo){
+						iframe.setAttribute("src", demo["url"]);
+					} else {
+						console.log("help");
+						iframe.setAttribute("src", "https://physics-demos.js.org/error");
+					}
+				}
+
+				$(window).on("hashchange", function(){
+					loadDemo();
+				});
+				loadDemo();
 			});
 		})();
 	</script>

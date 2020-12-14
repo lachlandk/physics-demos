@@ -2,8 +2,8 @@
 	"phasors": {
 		"title": "Phasors",
 		"description": "Visualise linear superposition of waves using phasor diagrams.",
-		"url": "/phasors/main.html",
-		"thumbnail": "/phasors/thumbnail.png",
+		"url": "https://raw.githubusercontent.com/lachlandk/physics-demos-code/main/phasors/main.html",
+		"thumbnail": "https://raw.githubusercontent.com/lachlandk/physics-demos-code/main/phasors/thumbnail.png",
 		"tags": ["waves"]
 	},
 	"ray-optics": {

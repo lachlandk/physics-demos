@@ -27,8 +27,14 @@
 	},
 	"orbital-parameters": {
 		"title": "Orbital Parameters",
-		"description": "Visualisation of Orbital Elements in a two-body Keplerian orbit.",
+		"description": "Visualisation of orbital elements in a two-body Keplerian orbit.",
 		"url": "",
 		"tags": ["astrophysics"]
+	},
+	"sorting-algorithm-simulator": {
+		"title": "Sorting Algorithm Simulator",
+		"description": "Run different sorting algorithms against each other.",
+		"url": "",
+		"tags": ["computer-science"]
 	}
 }

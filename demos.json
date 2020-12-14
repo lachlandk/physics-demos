@@ -9,8 +9,8 @@
 	"ray-optics": {
 		"title": "Ray Optics",
 		"description": "Simulation of ray optics with various optical surfaces.",
-		"url": "https://lachlandk.github.io/ray-optics-demo",
-		"thumbnail": "https://raw.githubusercontent.com/lachlandk/ray-optics-demo/master/thumbnail.png",
+		"url": "https://lachlandk.github.io/physics-demos-code/ray-optics/main.html",
+		"thumbnail": "https://raw.githubusercontent.com/lachlandk/physics-demos-code/main/ray-optics/thumbnail.png",
 		"tags": ["optics"]
 	},
 	"integrals": {

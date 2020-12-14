@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!-- TODO: favicon -->
+	<title>Phasors Demo</title>
+	<link href="main.css" rel="stylesheet" type="text/css">
+<!--	<link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet" type="text/css">-->
+</head>
+<body>
+<div id="phasors-container">
+	<div id="osc-1-phasor-container" class="phasor-container">
+		<div class="phasor-controls">
+			<h3 class="phasor-title">Phasor 1</h3>
+			<div class="frequency-controls">
+				<input class="frequency-control"  id="osc-1-frequency-control" type="range" min="0.1" max="2" step="0.05" value="1" oninput="osc_1_update();">
+				<label class="frequency-control-label" id="osc-1-frequency-label" for="osc-1-frequency-control"></label>
+			</div>
+			<div class="amplitude-controls">
+				<input class="amplitude-control" id="osc-1-amplitude-control" type="range" min="0.1" max="2" step="0.05" value="1" oninput="osc_1_update();">
+				<label class="amplitude-control-label" id="osc-1-amplitude-label" for="osc-1-amplitude-control"></label>
+			</div>
+		</div>
+		<div class="phasor-canvas-container">
+			<canvas id="osc-1-phasor" class="phasor"></canvas>
+		</div>
+	</div>
+	<div id="osc-2-phasor-container" class="phasor-container">
+		<div class="phasor-controls">
+			<h3 class="phasor-title">Phasor 2</h3>
+			<div class="frequency-controls">
+				<input class="frequency-control"  id="osc-2-frequency-control" type="range" min="0.1" max="2" step="0.05" value="1" oninput="osc_2_update();">
+				<label class="frequency-control-label" id="osc-2-frequency-label" for="osc-2-frequency-control"></label>
+			</div>
+			<div class="amplitude-controls">
+				<input class="amplitude-control" id="osc-2-amplitude-control" type="range" min="0.1" max="2" step="0.05" value="1" oninput="osc_2_update();">
+				<label class="amplitude-control-label" id="osc-2-amplitude-label" for="osc-2-amplitude-control"></label>
+			</div>
+		</div>
+		<div class="phasor-canvas-container">
+			<canvas id="osc-2-phasor" class="phasor"></canvas>
+		</div>
+	</div>
+	<div id="resultant-phasor-container" class="phasor-container">
+		<div class="phasor-controls">
+			<h3 class="phasor-title">Resultant Phasor</h3>
+			<div id="resultant-phasor-labels">
+				<p id="resultant-frequency-label"></p>
+				<p id="resultant-amplitude-label"></p>
+			</div>
+		</div>
+		<div class="phasor-canvas-container">
+			<canvas id="resultant-phasor" class="phasor"></canvas>
+		</div>
+	</div>
+</div>
+<div id="waves-container">
+	<div id="osc-1-wave-container" class="wave-container">
+		<div class="wave-canvas-container">
+			<canvas id="osc-1-wave" class="wave"></canvas>
+		</div>
+	</div>
+	<div id="osc-2-wave-container" class="wave-container">
+		<div class="wave-canvas-container">
+			<canvas id="osc-2-wave" class="wave"></canvas>
+		</div>
+	</div>
+	<div id="resultant-wave-container" class="wave-container">
+		<div class="wave-canvas-container">
+			<canvas id="resultant-wave" class="wave"></canvas>
+		</div>
+	</div>
+</div>
+<div id="master-controls-container">
+	<h1 id="title">Visualising Superposition with Phasors</h1>
+	<div id="master-controls">
+		<button type="button" id="start-button" onclick="startAnimations();">Start Animation</button>
+		<button type="button" id="stop-button" onclick="cancelAnimations();" disabled>Stop Animation</button>
+	</div>
+</div>
+<script src="phasor-graphs.js"></script>
+<script src="wave-graphs.js"></script>
+<script src="controls.js"></script>
+</body>
+</html>

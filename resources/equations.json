@@ -1,0 +1,34 @@
+{
+	"equations": [
+		{
+			"name": "Newton's Second Law",
+			"latex": "\\vec{F}=m\\vec{a}",
+			"description": "",
+			"wikipedia-link": ""
+		},
+		{
+			"name": "Simple Harmonic Oscillator Equation",
+			"latex": "\\frac{\\mathrm{d}^2x}{\\mathrm{d}t^2}+\\omega_0^2x=0",
+			"description": "",
+			"wikipedia-link": ""
+		},
+		{
+			"name": "1D Wave Equation",
+			"latex": "\\frac{\\partial^2y}{\\partial t^2}=c^2\\frac{\\partial^2y}{\\partial x^2}",
+			"description": "",
+			"wikipedia-link": ""
+		},
+		{
+			"name": "Gauss' Law",
+			"latex": "\\Phi_E={\\large\\bigcirc}\\kern-1.55em\\iint_S\\vec{E}\\cdot\\mathrm{d}\\vec{s}=\\frac{Q_{enc}}{\\epsilon_0}",
+			"description": "",
+			"wikipedia-link": ""
+		},
+		{
+			"name": "Gradient in 3D Cartesian Coordinates",
+			"latex": "\\nabla f=\\frac{\\partial f}{\\partial x}\\hat{\\imath}+\\frac{\\partial f}{\\partial y}\\hat{\\jmath}+\\frac{\\partial f}{\\partial z}\\hat{k}",
+			"description": "",
+			"wikipedia-link": ""
+		}
+	]
+}

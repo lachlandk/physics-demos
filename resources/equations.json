@@ -26,7 +26,7 @@
 		},
 		{
 			"name": "Coulomb's Law",
-			"latex": "\\vec{F_1}=\\frac{q_1 q_2}{4\\pi\\epsilon_0 r^2}\\hat{r_12}",
+			"latex": "\\vec{F_1}=\\frac{q_1 q_2}{4\\pi\\epsilon_0 r^2}\\hat{r_{12}}",
 			"description": "",
 			"wikipediaLink": ""
 		},
@@ -50,7 +50,7 @@
 		},
 		{
 			"name": "Wave Equation (General Form)",
-			"latex": "\\dot u=c^2\\nabla^2u",
+			"latex": "\\ddot u=c^2\\nabla^2u",
 			"description": "",
 			"wikipediaLink": ""
 		},
@@ -68,7 +68,7 @@
 		},
 		{
 			"name": "Definition of the Derivative",
-			"latex": "f\\prime(x)=\\lim_{h\\to 0}\\frac{f(x+h)-f(x)}{h}",
+			"latex": "f^\\prime(x)=\\lim_{h\\to 0}\\frac{f(x+h)-f(x)}{h}",
 			"description": "",
 			"wikipediaLink": ""
 		},
@@ -79,14 +79,8 @@
 			"wikipediaLink": ""
 		},
 		{
-			"name": "Taylor Series for a function of Two Variables",
-			"latex": "f(x,y)=f(x_0,y_0)+(x-x_0)\\left.\\frac{\\partial f}{\\partial x}\\right|_{(x_0,y_0)}+(y-y_0)\\left.\\fract{\\partial f}{\\partial y}\\right|_{(x_0,y_0)}+\\frac{(x-x_0)^2}{2!}\\left.\\frac{\\partial^2f}{\\partial x^2}\\right|_{(x_0,y_0)}+\\frac{(y-y_0)^2}{2!}\\left.\\frac{\\partial^2f}{\\partial y^2}\\right|_{(x_0,y_0)}+(x-x_0)(y-y_0)\\left.\\frac{\\partial^2f}{\\partial x\\partial y}\\right|_{(x_0,y_0)}",
-			"description": "",
-			"wikipediaLink": ""
-		},
-		{
-			"name": "Taylor Series for a function of Many Variables",
-			"latex": "f(x_1,\\dots,x_k)=\\sum_{n_1=0}^{\\infty}\\dots\\sum_{n_k=0}^{\\infty}\\frac{(x_1-x_{1,0})^n_1\\dots(x_k-x_{k,0})^n_k}{n_1!\\dots n_k!}\\left.\\frac{\\partial^{n_1+\\dots+n_k}f}{\\partial x_1^{n_1}\\dots\\partial x_k^{n_k}}\\right|_{(x_{1,0}\\dots x_{k,0})}",
+			"name": "Taylor Series for a function of Several Variables",
+			"latex": "f(x_1,\\dots,x_k)=\\sum_{n_1=0}^{\\infty}\\dots\\sum_{n_k=0}^{\\infty}\\left.\\frac{\\partial^{n_1+\\dots+n_k}f}{\\partial x_1^{n_1}\\dots\\partial x_k^{n_k}}\\right|_{(x_{1,0}\\dots x_{k,0})}\\frac{(x_1-x_{1,0})^n_1\\dots(x_k-x_{k,0})^n_k}{n_1!\\dots n_k!}",
 			"description": "",
 			"wikipediaLink": ""
 		},

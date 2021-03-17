@@ -1,5 +1,5 @@
 (function(){
-	$.getJSON("https://raw.githubusercontent.com/lachlandk/physics-demos/master/demos.json", function(demos){
+	$.getJSON("https://raw.githubusercontent.com/lachlandk/physics-demos/master/resources/demos.json", function(demos){
 		Object.keys(demos).forEach(function(key){
 			const demo = demos[key];
 

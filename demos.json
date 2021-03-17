@@ -4,37 +4,43 @@
 		"description": "Visualise linear superposition of waves using phasor diagrams.",
 		"url": "https://lachlandk.github.io/physics-demos-code/phasors/main.html",
 		"thumbnail": "https://raw.githubusercontent.com/lachlandk/physics-demos-code/main/phasors/thumbnail.png",
-		"tags": ["waves"]
+		"category": ["physics"],
+		"tags": ["oscillations"]
 	},
 	"ray-optics": {
 		"title": "Ray Optics",
 		"description": "Simulation of ray optics with various optical surfaces.",
 		"url": "https://lachlandk.github.io/physics-demos-code/ray-optics/main.html",
 		"thumbnail": "https://raw.githubusercontent.com/lachlandk/physics-demos-code/main/ray-optics/thumbnail.png",
+		"category": ["physics"],
 		"tags": ["optics"]
 	},
 	"integrals": {
 		"title": "Integral Problem Generator",
 		"description": "Generate a practice integral (varying difficulties) to solve.",
 		"url": "",
-		"tags": ["mathematics"]
+		"category": ["mathematics"],
+		"tags": []
 	},
 	"infinite-potential-well": {
 		"title": "Infinite/Finite Potential Well",
 		"description": "Simulation of a quantum particle in a potential well.",
 		"url": "",
+		"category": ["physics"],
 		"tags": ["quantum-mechanics"]
 	},
 	"orbital-parameters": {
 		"title": "Orbital Parameters",
 		"description": "Visualisation of orbital elements in a two-body Keplerian orbit.",
 		"url": "",
-		"tags": ["astrophysics"]
+		"category": ["astronomy"],
+		"tags": []
 	},
 	"sorting-algorithm-simulator": {
 		"title": "Sorting Algorithm Simulator",
 		"description": "Run different sorting algorithms against each other.",
 		"url": "",
-		"tags": ["computer-science"]
+		"category": ["computer-science"],
+		"tags": []
 	}
 }

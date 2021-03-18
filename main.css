@@ -67,11 +67,12 @@ nav h2 {
 
 nav a {
 	font-size: 20px;
-}
-
-nav a:link {
-	color: black;
+	display: block;
 	text-decoration: none;
+	font-weight: normal;
+	background: white;
+	cursor: pointer;
+	color: black;
 }
 
 nav a:hover {
@@ -81,6 +82,16 @@ nav a:hover {
 nav a:active {
 	position: relative;
 	top: 2px;
+}
+
+nav a.selected-category {
+	text-decoration: black underline;
+	font-weight: bold;
+}
+
+nav .tags-block {
+	margin-left: 20px;
+	transition: max-height 0.2s;
 }
 
 #category-divider {

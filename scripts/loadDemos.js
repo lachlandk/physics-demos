@@ -11,7 +11,7 @@ window.addEventListener("load", () => {
 				tagList.push(...demo.tags.map(tag => `${demo.category}-${tag}`));
 
 				let image = document.createElement("img");
-				image.setAttribute("src", demo.thumbnail ? demo.thumbnail : "blank.png");  // TODO move to resources
+				image.setAttribute("src", demo.thumbnail ? demo.thumbnail : "resources/blank.png");
 				image.setAttribute("alt",  `Thumbnail for ${demo.title} demo`);
 				let title = document.createElement("h3");
 				title.innerText = demo.title;

@@ -30,13 +30,13 @@
 	</style>
 </head>
 <body>
-	<iframe id="demo"></iframe>
 	<script>
 		window.addEventListener("load", () => {
 			fetch("https://raw.githubusercontent.com/lachlandk/physics-demos/master/resources/demos.json")
 				.then(response => response.json())
 				.then(demos => {
-					const iframe = document.getElementById("demo");
+					const iframe = document.createElement("iframe");
+					iframe.setAttribute("id", "demo");
 					const urlParameters = new URLSearchParams(window.location.search);
 					const demoID = urlParameters.get("demo");
 					if (urlParameters.has("demo") && demos[demoID]) {
@@ -46,6 +46,7 @@
 						iframe.setAttribute("src", "error.html");
 						// TODO: merge error.html into this
 					}
+					document.body.appendChild(iframe);
 				});
 		});
 	</script>

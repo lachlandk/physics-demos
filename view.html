@@ -36,20 +36,16 @@
 			fetch("https://raw.githubusercontent.com/lachlandk/physics-demos/master/resources/demos.json")
 				.then(response => response.json())
 				.then(demos => {
-					const loadDemo = () => {
-						const iframe = document.getElementById("demo");
-						const demoHash = location.hash.match(/demo=([^&]+)/i);
-						if (demoHash && demos[demoHash[1]]){
-							iframe.setAttribute("src", demos[demoHash[1]].url);
-						} else{
-							iframe.setAttribute("src", "error.html");
-							// TODO: merge error.html into this
-						}
+					const iframe = document.getElementById("demo");
+					const urlParameters = new URLSearchParams(window.location.search);
+					const demoID = urlParameters.get("demo");
+					if (urlParameters.has("demo") && demos[demoID]) {
+						iframe.setAttribute("src", demos[demoID].url);
+						history.replaceState(null, "", `${location.href.split(/[?#]/)[0]}?demo=${demoID}${location.hash}`);
+					} else {
+						iframe.setAttribute("src", "error.html");
+						// TODO: merge error.html into this
 					}
-
-					window.addEventListener("hashchange", loadDemo);
-
-					loadDemo();
 				});
 		});
 	</script>

@@ -19,7 +19,7 @@ window.addEventListener("load", () => {
 				description.innerText = demo.description;
 				let anchor = document.createElement("a");
 				if (demo.url) {
-					anchor.setAttribute("href", `https://physics-demos.js.org/view#demo=${key}`);
+					anchor.setAttribute("href", `https://physics-demos.js.org/view?demo=${key}`);
 				}
 				anchor.appendChild(image);
 				anchor.appendChild(title);

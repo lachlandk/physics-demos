@@ -3,15 +3,11 @@
 <head>
 	<meta charset="UTF-8">
 	<!-- TODO: favicon -->
-	<!-- TODO: generate title -->
 	<!-- TODO: add preloads for demos.json (maybe also actual html page?) -->
-	<title>Demo</title>
+	<title>View Demo - Physics Demos</title>
 	<style>
 		* {
-			box-sizing:			border-box;
-			-webkit-box-sizing:	border-box;
-			-moz-box-sizing:	border-box;
-
+			box-sizing: border-box
 			margin: 0; /* to get rid of browsers applying margins by default (very silly) */
 		}
 
@@ -42,6 +38,7 @@
 					if (urlParameters.has("demo") && demos[demoID]) {
 						iframe.setAttribute("src", demos[demoID].url);
 						history.replaceState(null, "", `${location.href.split(/[?#]/)[0]}?demo=${demoID}${location.hash}`);
+						document.title = `${demos[demoID].title} - Physics Demos`;
 					} else {
 						iframe.setAttribute("src", "error.html");
 						// TODO: merge error.html into this

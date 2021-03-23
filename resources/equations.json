@@ -86,7 +86,7 @@
 		},
 		{
 			"name": "Stefan-Boltzmann Law",
-			"latex": "P=A\\epsilon\\sigma T^4",
+			"latex": "P=A\\varepsilon\\sigma T^4",
 			"description": "",
 			"wikipediaLink": ""
 		},
@@ -116,13 +116,13 @@
 		},
 		{
 			"name": "Coulomb's Law",
-			"latex": "\\vec{F_1}=\\frac{q_1q_2}{4\\pi\\epsilon_0 r^2}\\hat{r}_{12}",
+			"latex": "\\vec{F_1}=\\frac{q_1q_2}{4\\pi\\varepsilon_0 r^2}\\hat{r}_{12}",
 			"description": "",
 			"wikipediaLink": ""
 		},
 		{
 			"name": "Gauss's Law",
-			"latex": "\\Phi_E={\\large\\bigcirc}\\kern-1.55em\\iint_S\\vec{E}\\cdot\\mathrm{d}\\vec{s}=\\frac{Q_{enc}}{\\epsilon_0}",
+			"latex": "\\Phi_E={\\large\\bigcirc}\\kern-1.55em\\iint_S\\vec{E}\\cdot\\mathrm{d}\\vec{s}=\\frac{Q_{enc}}{\\varepsilon_0}",
 			"description": "",
 			"wikipediaLink": ""
 		},

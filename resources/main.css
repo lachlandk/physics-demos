@@ -1,158 +1,156 @@
 * {
-	box-sizing:			border-box;
-	-webkit-box-sizing:	border-box;
-	-moz-box-sizing:	border-box;
-
+	box-sizing: border-box;
 	margin: 0; /* to get rid of browsers applying margins by default (very silly) */
-	font-family: "Baloo 2", cursive;
+
+	font-family: "Roboto", sans-serif;
+	font-size: 20px;
 }
 
-body {
+/*   ----------   Header   ----------   */
+
+header {
+	width: 100%;
+	height: 20vh;
 	display: flex;
 	flex-flow: column nowrap;
+	justify-content: center;
 	align-items: center;
 }
 
-#content-divider {
-	width: 90%;
-	height: 2px;
-	background: #AAA;
-	border-radius: 25%;
-}
-
-#header-anchor {
-	width: 100%;
+header a {
 	height: 20vh;
+	width: 90%;
+	border-bottom: 2px #AAA solid;
 	position: absolute;
 	top: 0;
 }
 
-header {
-	width: 90%;
-	height: 20vh;
+header h1 {
+	font-size: 3.6em;
+	font-family: "Nanum Pen Script", cursive;
+}
+/*   ----------   Main page elements   ----------   */
+
+main {
+	width: 100%;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-around;
+}
+
+nav {
+	width: 25%;
+	margin-top: 5vh;
 	display: flex;
 	flex-flow: column nowrap;
-	justify-content: center;
 	align-items: center;
 }
 
-header h1 {
-	font-size: 72px;
-	font-family: "Nanum Pen Script", cursive;
+section {
+	width: 75%;
+	margin-top: 5vh;
 }
 
-header h2 {
-	font-size: 24px;
-	color: #333;
-}
-
-main {
-	width: 90%;
-	display: flex;
-	flex-flow: row nowrap;
-	justify-content: center;
+footer {
+	position: relative;
+	bottom: 0;
+	margin-top: 5vh;
+	height: 200px;
+	width: 100%;
+	background: #CCC;
 }
 
 /*   ----------   Nav bar   ----------   */
 
-nav {
-	width: 20%;
-	margin-top: 5vh;
-	display: flex;
-	flex-flow: column nowrap;
-}
-
 nav h2 {
-	font-size: 28px;
-	text-decoration: black underline;
+	font-size: 1.4em;
+	background: #FFF;
+	color: #111;
+	width: 13rem;
+	padding: 0.25rem 0;
 }
 
 nav a {
-	font-size: 20px;
 	display: block;
+	width: 13em;
+	margin: 0.1em 0;
+	padding: 0.25em 0.5em;
+	border: 2px #CCC solid;
+	border-radius: 5px;
+	background: #EEE;
 	text-decoration: none;
 	font-weight: normal;
-	background: white;
 	cursor: pointer;
-	color: black;
-}
-
-nav a:hover {
-	margin-left: 10px;
-}
-
-nav a:active {
+	color: #111;
 	position: relative;
-	top: 2px;
+	left: 0;
+	transition: left 0.1s;
 }
 
 nav a.selected-category {
-	text-decoration: black underline;
+	border: 2px rgb(0, 58, 68) solid;
+	color: rgb(0, 58, 68);
+	background: rgb(0, 164, 200);
 	font-weight: bold;
 }
 
+nav .tags-block a {
+	width: 12em;
+}
+
 nav .tags-block {
-	margin-left: 20px;
+	position: relative;
+	left: 0.5em;
 	transition: max-height 0.2s;
+	margin-bottom: 0.1em;
 }
 
-#category-divider {
-	position: sticky;
-	left: 20%;
-	top: 5vh;
-	height: 90vh;
-	width: 2px;
-	background: #AAA;
-	margin-top: 5vh;
-	border-radius: 25%;
+nav a:hover {
+	left: 0.5em;
 }
 
-section {
-	width: 80%;
+nav a:active {
+	left: 0.6em;
 }
 
-article {
-	width: 50%;
-	height: 400px;
-	display: inline-flex;
-	flex-flow: row nowrap;
-	justify-content: center;
-	align-items: center;
+/*   ----------   Demo thumbnails   ----------   */
+
+article.thumbnail {
+	width: 22.5em;
+	height: 20em;
+	margin: 0 1em 1em 0;
+	border: 2px #CCC solid;
+	border-radius: 5px;
+	background: white;
+}
+
+.thumbnail img {
+	max-width: 100%; /* TODO: fix image sizes so this is not necessary */
+	border: 2px #CCC solid;
+	border-radius: 5px;
 }
 
 .thumbnail-container {
-	border: 2px #CCC solid;
-	border-radius: 5px;
-	width: 90%;
-	height: 90%;
-	padding: 5%;
-	overflow: hidden;
+	padding: 1.25em;
+	border-bottom: 2px #CCC solid;
 }
 
-.thumbnail-container a:link, a:visited {
+.thumbnail a:link, .thumbnail a:visited {
 	text-decoration: none;
 	color: black;
+	height: 100%;
+	display: block;
 }
 
 .thumbnail h3 {
-	font-size: 20px;
-	text-decoration: underline;
+	margin: 0.5em 1.25em 0 1.25em;
+	color: #111;
 }
 
 .thumbnail p {
-	font-size: 18px;
+	margin: 0 1.25em;
+	font-size: 0.9em;
+	color: #111;
 }
 
-img {
-	max-width: 100%;
-	height: auto;
-	border: 2px #CCC solid;
-	border-radius: 5px;
-}
-
-footer {
-	margin-top: 5vh;
-	height: 20vh;
-	width: 100%;
-	background: #CCC
-}
+/*   ----------   Footer   ----------   */

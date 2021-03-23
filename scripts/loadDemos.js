@@ -13,6 +13,10 @@ window.addEventListener("load", () => {
 				let image = document.createElement("img");
 				image.setAttribute("src", demo.thumbnail ? demo.thumbnail : "resources/blank.png");
 				image.setAttribute("alt",  `Thumbnail for ${demo.title} demo`);
+				let container = document.createElement("div");
+				container.setAttribute("class", "thumbnail-container");
+				container.style.backgroundImage = `url(resources/thumbnail-backgrounds/${demo.category}.svg)`;
+				container.appendChild(image);
 				let title = document.createElement("h3");
 				title.innerText = demo.title;
 				let description = document.createElement("p");
@@ -21,16 +25,13 @@ window.addEventListener("load", () => {
 				if (demo.url) {
 					anchor.setAttribute("href", `https://physics-demos.js.org/view?demo=${key}`);
 				}
-				anchor.appendChild(image);
-				anchor.appendChild(title);
-				anchor.appendChild(description);
 
 				let article = document.createElement("article");
 				article.setAttribute("class", `thumbnail ${demo.category} ${demo.tags.join(" ")}`);
-				let container = document.createElement("div");
-				container.setAttribute("class", "thumbnail-container");
-				container.appendChild(anchor);
-				article.appendChild(container);
+				anchor.appendChild(container);
+				anchor.appendChild(title);
+				anchor.appendChild(description);
+				article.appendChild(anchor);
 				document.getElementById("demos").appendChild(article);
 			});
 
@@ -70,11 +71,15 @@ window.addEventListener("load", () => {
 				const categoryHash = location.hash.match(/category=([^&]+)/i);
 				const tagHash = location.hash.match(/tag=([^&]+)/i);
 				navLinkElementList.forEach(element => {element.classList.remove("selected-category")});
-				categoryElementList.forEach(element => {element.nextElementSibling.style.maxHeight = "0px"});
+				categoryElementList.forEach(element => {
+					element.nextElementSibling.style.maxHeight = "0px";
+					element.nextElementSibling.style.visibility = "hidden";
+				});
 				if (categoryHash) {
 					const categoryElement = document.getElementById(categoryHash[1]);
 					categoryElement.classList.add("selected-category");
 					categoryElement.nextElementSibling.style.maxHeight = `${categoryElement.nextElementSibling.scrollHeight}px`;
+					categoryElement.nextElementSibling.style.visibility = "visible";
 					if (tagHash) {
 						document.getElementById(tagHash[1]).classList.add("selected-category");
 					}

@@ -20,13 +20,13 @@
 		},
 		{
 			"name": "Definition of Kinetic Energy",
-			"latex": "\\E_k=\\frac{1}{2}mv^2",
+			"latex": "E_k=\\frac{1}{2}mv^2",
 			"description": "",
 			"wikipediaLink": ""
 		},
 		{
 			"name": "Definition of Work",
-			"latex": "W=\\int_\\ell\\vec{F}\\cdot\\mathrm{d}\\vec{s}",
+			"latex": "W=\\int_\\ell\\vec{F}\\cdot\\mathrm{d}\\vec{\\ell}",
 			"description": "",
 			"wikipediaLink": ""
 		},
@@ -62,13 +62,13 @@
 		},
 		{
 			"name": "First Law of Thermodynamics",
-			"latex": "\\mathrm{d}U=\\mathchar'26\\mkern-12mu dQ+\\mathchar'26\\mkern-12mu dW",
+			"latex": "\\mathrm{d}U=\\bar{}\\kern-12mu\\mathrm{d}Q+\\bar{}\\kern-12mu\\mathrm{d}W",
 			"description": "",
 			"wikipediaLink": ""
 		},
 		{
 			"name": "Second Law of Thermodynamics",
-			"latex": "\\mathrm{d}S=\\frac{\\mathchar'26\\mkern-12mu dQ}{T}",
+			"latex": "\\mathrm{d}S=\\frac{\\bar{}\\kern-12mu\\mathrm{d}Q}{T}",
 			"description": "",
 			"wikipediaLink": ""
 		},
@@ -86,7 +86,7 @@
 		},
 		{
 			"name": "Stefan-Boltzmann Law",
-			"latex": "L=A\\epsilon\\sigma T^4",
+			"latex": "P=A\\epsilon\\sigma T^4",
 			"description": "",
 			"wikipediaLink": ""
 		},

@@ -62,13 +62,13 @@
 		},
 		{
 			"name": "First Law of Thermodynamics",
-			"latex": "\\mathrm{d}U=\\bar{\\space}\\kern-12mu\\mathrm{d}Q+\\bar{\\space}\\kern-12mu\\mathrm{d}W",
+			"latex": "\\mathrm{d}U=\\bar{\\phantom{a}}\\kern-12mu\\mathrm{d}Q+\\bar{\\phantom{a}}\\kern-12mu\\mathrm{d}W",
 			"description": "",
 			"wikipediaLink": ""
 		},
 		{
 			"name": "Second Law of Thermodynamics",
-			"latex": "\\mathrm{d}S=\\frac{\\bar{\\space}\\kern-12mu\\mathrm{d}Q}{T}",
+			"latex": "\\mathrm{d}S=\\frac{\\bar{\\phantom{a}}\\kern-12mu\\mathrm{d}Q}{T}",
 			"description": "",
 			"wikipediaLink": ""
 		},

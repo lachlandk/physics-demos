@@ -46,7 +46,7 @@ nav {
 	align-items: center;
 }
 
-section {
+#demos {
 	width: 75%;
 	margin-top: 5vh;
 }
@@ -62,15 +62,49 @@ footer {
 
 /*   ----------   Nav bar   ----------   */
 
-nav h2 {
-	font-size: 1.4em;
-	background: #FFF;
-	color: #111;
-	width: 13rem;
-	padding: 0.25rem 0;
+#nav-container {
+	position: sticky;
+	top: 1em;
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+	padding: 1em;
+	border: 2px #CCC solid;
+	border-radius: 5px;
 }
 
-nav a {
+#nav-container h2 {
+	font-size: 1.4em;
+	color: #111;
+	width: 13rem;
+	padding: 0 0 0.25rem 0;
+}
+
+.bio-link, .bio-link:link, .bio-link:visited {
+	font-weight: bold;
+	color: #111;
+	text-decoration: none;
+	font-size: 0.75rem;
+}
+
+.bio-link:hover {
+	text-decoration: underline;
+}
+
+#nav-container p {
+	margin-top: 0.5em;
+	font-size: 0.75em;
+	color: #111;
+	width: 13rem;
+}
+
+#categories {
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+}
+
+.nav-link {
 	display: block;
 	width: 13em;
 	margin: 0.1em 0;
@@ -87,30 +121,30 @@ nav a {
 	transition: left 0.1s;
 }
 
-nav a.selected-category {
+.nav-link:hover {
+	left: 0.5em;
+}
+
+.nav-link:active {
+	left: 0.6em;
+}
+
+.nav-link.selected-category {
 	border: 2px rgb(0, 58, 68) solid;
 	color: rgb(0, 58, 68);
 	background: rgb(0, 164, 200);
 	font-weight: bold;
 }
 
-nav .tags-block a {
+.nav-link.tag {
 	width: 12em;
 }
 
-nav .tags-block {
+#categories .tags-block {
 	position: relative;
 	left: 0.5em;
 	transition: max-height 0.2s;
 	margin-bottom: 0.1em;
-}
-
-nav a:hover {
-	left: 0.5em;
-}
-
-nav a:active {
-	left: 0.6em;
 }
 
 /*   ----------   Demo thumbnails   ----------   */

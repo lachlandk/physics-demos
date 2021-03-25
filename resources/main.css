@@ -6,35 +6,17 @@
 	font-size: 20px;
 }
 
-/*   ----------   Header   ----------   */
+/*   ----------   Main page elements   ----------   */
 
-header {
-	width: 100%;
-	height: 20vh;
-	min-height: 4em;
+body {
+	min-height: 100vh;
 	display: flex;
 	flex-flow: column nowrap;
-	justify-content: center;
-	align-items: center;
 }
-
-header a {
-	height: 20vh;
-	min-height: 4em;
-	width: 90%;
-	border-bottom: 2px #AAA solid;
-	position: absolute;
-	top: 0;
-}
-
-header h1 {
-	font-size: 3.6em;
-	font-family: "Nanum Pen Script", cursive;
-}
-/*   ----------   Main page elements   ----------   */
 
 main {
 	width: 100%;
+	flex: 1;
 	display: flex;
 	flex-flow: row nowrap;
 	justify-content: space-around;
@@ -58,6 +40,35 @@ footer {
 	height: 200px;
 	width: 100%;
 	background: #CCC;
+	background: linear-gradient(135deg, #CCC 0%, #BBB 100%);
+}
+
+/*   ----------   Header   ----------   */
+
+header {
+	width: 100%;
+	height: 20vh;
+	min-height: 4em;
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	align-items: center;
+	border-bottom: 2px #AAA solid;
+	background: #F0F0F0;
+	background: linear-gradient(135deg, #F0F0F0 0%, #EDEDED 100%);
+}
+
+header a {
+	height: 20vh;
+	min-height: 4em;
+	width: 100%;
+	position: absolute;
+	top: 0;
+}
+
+header h1 {
+	font-size: 3.6em;
+	font-family: "Nanum Pen Script", cursive;
 }
 
 /*   ----------   Nav bar   ----------   */
@@ -112,7 +123,8 @@ footer {
 	padding: 0.25em 0.5em;
 	border: 2px #CCC solid;
 	border-radius: 5px;
-	background: #EEE;
+	background: rgb(238, 238, 238);
+	background: linear-gradient(135deg, rgb(238, 238, 238) 0%, rgb(221, 221, 221) 100%);
 	text-decoration: none;
 	font-weight: normal;
 	cursor: pointer;
@@ -134,6 +146,7 @@ footer {
 	border: 2px rgb(0, 58, 68) solid;
 	color: rgb(0, 58, 68);
 	background: rgb(0, 164, 200);
+	background: linear-gradient(135deg, rgb(0, 164, 200) 0%, rgb(0, 120, 170) 100%);
 	font-weight: bold;
 }
 

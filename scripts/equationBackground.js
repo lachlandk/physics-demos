@@ -1,4 +1,4 @@
-function EquationObject(equationJSON) {
+function EquationObject(equationJSON, backgroundContainer) {
 	this.name = equationJSON.name;
 	this.description = equationJSON.description;
 	this.wikipediaLink = equationJSON.wikipediaLink;
@@ -7,11 +7,11 @@ function EquationObject(equationJSON) {
 	this.container.innerText = `\\[${equationJSON.latex}\\]`;
 	this.container.style.position = "absolute";
 	this.container.style.visibility = "none";
-	equationBackgroundContainer.appendChild(this.container);
+	backgroundContainer.appendChild(this.container);
 
 	this.initialPos = {
-		x: Math.random() * equationBackgroundContainer.offsetWidth, // pixels, measured from top to bottom, left to right
-		y: Math.random() * equationBackgroundContainer.offsetHeight,
+		x: Math.random() * backgroundContainer.offsetWidth, // pixels, measured from top to bottom, left to right
+		y: Math.random() * backgroundContainer.offsetHeight,
 		theta: Math.random() * 90 - 45 // degrees, measured clockwise relative to the x-axis
 	};
 	this.velocity = {
@@ -20,12 +20,16 @@ function EquationObject(equationJSON) {
 		Vtheta: Math.random() * 10 - 5  // degrees per second
 	};
 	this.velocity.magnitude = Math.sqrt(this.velocity.Vx**2 + this.velocity.Vy**2);
+	this.bounds = {
+		maxX: backgroundContainer.offsetWidth,
+		maxY: backgroundContainer.offsetHeight
+	};
 
 	this.initDisplay = () => {
 		this.subContainer = this.container.childNodes[0];
 		this.svg = this.subContainer.childNodes[0];
 
-		const scale = Math.random() + 1;
+		const scale = Math.random() + 0.5;
 		this.container.style.width = scale * this.svg.width.baseVal.value + "px";
 		this.container.style.height = scale * this.svg.height.baseVal.value + "px";
 		this.svg.setAttribute("width", "100%");
@@ -78,18 +82,18 @@ function EquationObject(equationJSON) {
 		if (this.velocity.Vx < 0) {
 			yBoundaryPos = this.initialPos.y - gradient * this.initialPos.x;
 		} else {
-			yBoundaryPos = this.initialPos.y + gradient * (equationBackgroundContainer.offsetWidth - this.initialPos.x);
+			yBoundaryPos = this.initialPos.y + gradient * (this.bounds.maxX - this.initialPos.x);
 		}
 		if (yBoundaryPos < 0) {
 			yBoundaryPos = 0;
 			xBoundaryPos = this.initialPos.x - inverse_gradient * this.initialPos.y;
 			this.velocity.Vy *= -1;
-		} else if (yBoundaryPos > equationBackgroundContainer.offsetHeight) {
-			yBoundaryPos = equationBackgroundContainer.offsetHeight;
-			xBoundaryPos = inverse_gradient * (equationBackgroundContainer.offsetHeight - this.initialPos.y) + this.initialPos.x;
+		} else if (yBoundaryPos > this.bounds.maxY) {
+			yBoundaryPos = this.bounds.maxY;
+			xBoundaryPos = inverse_gradient * (this.bounds.maxY - this.initialPos.y) + this.initialPos.x;
 			this.velocity.Vy *= -1;
 		} else {
-			this.velocity.Vx > 0 ? xBoundaryPos = equationBackgroundContainer.offsetWidth : xBoundaryPos = 0;
+			this.velocity.Vx > 0 ? xBoundaryPos = this.bounds.maxX : xBoundaryPos = 0;
 			this.velocity.Vx *= -1;
 		}
 		const totalDistance = Math.sqrt(Math.abs(this.initialPos.x - xBoundaryPos)**2 + Math.abs(this.initialPos.y - yBoundaryPos)**2);
@@ -133,31 +137,47 @@ function EquationObject(equationJSON) {
 	}
 }
 
-Promise.all([
-	fetch("https://raw.githubusercontent.com/lachlandk/physics-demos/master/resources/equations.json").then(response => response.json()),
-	MathJax.startup.promise
-]).then(results => {
-	equationBackgroundContainer = document.createElement("div");
-	equationBackgroundContainer.setAttribute("id", "background-svg-container");
-	document.body.style.position = "relative";
-	equationBackgroundContainer.style.position = "absolute";
-	equationBackgroundContainer.style.overflow = "hidden";
-	equationBackgroundContainer.style.zIndex = "-1"; // change to enable mouse events
-	equationBackgroundContainer.style.width = "100%";
-	equationBackgroundContainer.style.height = "100%";
-	document.body.appendChild(equationBackgroundContainer);
+function createEquationBackground(equationNumber, containerElement = document.body) {
+	const equationBackgroundContainer = document.createElement("div");
+	Promise.all([
+		fetch("https://raw.githubusercontent.com/lachlandk/physics-demos/master/resources/equations.json").then(response => response.json()),
+		MathJax.startup.promise
+	]).then(results => {
+		equationBackgroundContainer.setAttribute("id", "background-svg-container");
+		containerElement.style.position = "relative";
+		equationBackgroundContainer.style.position = "absolute";
+		equationBackgroundContainer.style.overflow = "hidden";
+		equationBackgroundContainer.style.zIndex = "-1"; // change to enable mouse events
+		equationBackgroundContainer.style.width = "100%";
+		equationBackgroundContainer.style.height = "100%";
+		containerElement.appendChild(equationBackgroundContainer);
 
-	const equationObjects = [];
-	results[0].equations.forEach(equationJSON => {
-		equationObjects.push(new EquationObject(equationJSON));
+		const equationObjects = [];
+		let equationsList = results[0].equations;
+		for (let i = 0; i < equationNumber; i++) {
+			let randomIndex = Math.random() * equationsList.length | 0;
+			equationObjects.push(new EquationObject(equationsList.splice(randomIndex, 1)[0], equationBackgroundContainer));
+		}
+
+		MathJax.typeset();
+		equationObjects.forEach(equationObject => {equationObject.initDisplay();});
+
+		const backgroundResizeObserver = new ResizeObserver(entries => {
+			for (let object of equationObjects) {
+				object.bounds = {
+					maxX: equationBackgroundContainer.offsetWidth,
+					maxY: equationBackgroundContainer.offsetHeight
+				};
+			}
+		});
+		backgroundResizeObserver.observe(equationBackgroundContainer);
+
+		// Imperfections
+		// - Sometimes on mouseover the rotation is not set to zero at the end
+		// - No immediate reaction if the page size is changed
+		// - Elements that are on top of each other can "steal" mouse events
+		// - Occasionally when javascript is busy there can be a small delay on bounce
+		// 		- Could we append keyframes to existing animations? This would be better for calculating the wall bounces in advance
 	});
-
-	MathJax.typeset();
-	equationObjects.forEach(equationObject => {equationObject.initDisplay();});
-
-	// Imperfections
-	// - No immediate reaction if the page size is changed
-	// - Elements that are on top of each other can "steal" mouse events
-	// - Occasionally when javascript is busy there can be a small delay on bounce
-	// 		- Could we append keyframes to existing animations? This would be better for calculating the wall bounces in advance
-});
+	return equationBackgroundContainer;
+}

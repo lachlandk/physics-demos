@@ -23,10 +23,9 @@
 		};
 	</script>
 	<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
-	<!-- <script defer src="scripts/equationBackground.js"></script> -->
+	<script defer src="scripts/equationBackground.js" id="equation-background-script"></script>
 </head>
 <body>
-	<!-- TODO: floaty background -->
 	<header>
 		<a href="https://physics-demos.js.org" id="header-anchor"></a>
 		<h1>Physics Demos</h1>
@@ -52,6 +51,12 @@
 	</footer>
 	<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
 	<script src="scripts/loadDemos.js"></script>
+	<script type="text/javascript">
+		document.getElementById("equation-background-script").addEventListener("load", () => {
+			const equationBackgroundContainer = createEquationBackground(12, document.getElementsByTagName("main")[0]);
+			equationBackgroundContainer.style.opacity = 0.75;
+		});
+	</script>
 	<!-- TODO: add preloads -->
 </body>
 </html>

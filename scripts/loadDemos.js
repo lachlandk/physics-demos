@@ -74,6 +74,7 @@ window.addEventListener("load", () => {
 				categoryElementList.forEach(element => {
 					element.nextElementSibling.style.maxHeight = "0px";
 					element.nextElementSibling.style.visibility = "hidden";
+					// TODO: see if we can replace with scale-y
 				});
 				if (categoryHash) {
 					const categoryElement = document.getElementById(categoryHash[1]);
@@ -95,12 +96,12 @@ window.addEventListener("load", () => {
 			}
 
 			navLinkElementList.forEach(element => {
-				element.addEventListener("click", event => {
-					if (event.target.classList.contains("tag")) {
-						const parentCategory = event.target.parentElement.previousSibling.id;
-						history.replaceState(null, "", `#category=${parentCategory}&tag=${event.target.id}`)
+				element.addEventListener("click", function () {
+					if (this.classList.contains("tag")) {
+						const parentCategory = this.parentElement.previousSibling.id;
+						history.replaceState(null, "", `#category=${parentCategory}&tag=${this.id}`)
 					} else {
-						history.replaceState(null, "", event.target.id !== "all" ? `#category=${event.target.id}` : location.href.split("#")[0]);
+						history.replaceState(null, "", this.id !== "all" ? `#category=${this.id}` : location.href.split("#")[0]);
 					}
 					categoryUpdate();
 				});
